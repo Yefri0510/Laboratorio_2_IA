@@ -1,5 +1,7 @@
 # LABORATORIO 2
 
+Yefri Stiven Barrero Solano - 2320392
+
 ## Primer punto
 
 Python se ha consolidado como uno de los lenguajes más versátiles y poderosos para el manejo de datos y la visualización, gracias a su extenso ecosistema de librerías! Para el manejo de datos, cuenta con herramientas como Pandas, que permite manipular y analizar grandes volúmenes de información de manera eficiente, o NumPy, ideal para operaciones numéricas avanzadas. En el ámbito de las APIs de visualización, bibliotecas como Matplotlib ofrecen un control detallado sobre gráficos estáticos, mientras que Seaborn simplifica la creación de visualizaciones estadísticas atractivas. Para representaciones interactivas y dinámicas, Plotly y Bokeh permiten desarrollar dashboards y gráficos interactivos con solo unas líneas de código.
@@ -44,6 +46,12 @@ Este conjunto de librerías se utiliza para crear visualizaciones estáticas e i
 *   **Streamlit**: Framework para convertir scripts de datos en aplicaciones web interactivas de manera extremadamente rápida. Se integra perfectamente con la mayoría de las librerías de visualización (Matplotlib, Plotly, Bokeh, etc.).
 
 ## Segundo punto
+
+Con base a la tesis de maestría denominada: "Modelo de razonamiento basado en creencias, deseos en intenciones para la toma de decisiones en un algoritmo de planificación de trayectorias", se pueden establecer algunas definiciones como:
+
+### **1.Agente inteligente:** es una entidad (que puede ser software o hardware) capaz de percibir su entorno a través de sensores, procesar esa información y actuar de manera racional sobre dicho entorno mediante actuadores, con el fin de maximizar un resultado esperado o cumplir sus objetivos de diseño. Su racionalidad se refleja en la capacidad de tomar decisiones correctas basadas en creencias y deseos, lo que le permite adaptarse, aprender y operar de forma autónoma en entornos dinámicos. Los agentes inteligentes son fundamentales en áreas como la robótica y la inteligencia artificial, donde se busca emular capacidades humanas de razonamiento y acción (Capítulos 3.1 y 4.1.3).
+### **2.Campo de potencial artificial (APF):**
+### **3.Algoritmo BDI (Belief-Desire-Intention):**
 
 ## Tercer punto
 
