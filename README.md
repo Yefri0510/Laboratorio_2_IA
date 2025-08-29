@@ -2,7 +2,7 @@
 
 Yefri Stiven Barrero Solano - 2320392
 
-## Primer punto
+# Primer punto
 
 Python se ha consolidado como uno de los lenguajes más versátiles y poderosos para el manejo de datos y la visualización, gracias a su extenso ecosistema de librerías! Para el manejo de datos, cuenta con herramientas como Pandas, que permite manipular y analizar grandes volúmenes de información de manera eficiente, o NumPy, ideal para operaciones numéricas avanzadas. En el ámbito de las APIs de visualización, bibliotecas como Matplotlib ofrecen un control detallado sobre gráficos estáticos, mientras que Seaborn simplifica la creación de visualizaciones estadísticas atractivas. Para representaciones interactivas y dinámicas, Plotly y Bokeh permiten desarrollar dashboards y gráficos interactivos con solo unas líneas de código.
 
@@ -45,23 +45,23 @@ Este conjunto de librerías se utiliza para crear visualizaciones estáticas e i
 
 *   **Streamlit**: Framework para convertir scripts de datos en aplicaciones web interactivas de manera extremadamente rápida. Se integra perfectamente con la mayoría de las librerías de visualización (Matplotlib, Plotly, Bokeh, etc.).
 
-## Segundo punto
+# Segundo punto
 
 Con base a la tesis de maestría denominada: "Modelo de razonamiento basado en creencias, deseos en intenciones para la toma de decisiones en un algoritmo de planificación de trayectorias", se pueden establecer algunas definiciones como:
 
-### **1. Agente inteligente** 
+## **1. Agente inteligente** 
 Es una entidad (que puede ser software o hardware) capaz de percibir su entorno a través de sensores, procesar esa información y actuar de manera racional sobre dicho entorno mediante actuadores, con el fin de maximizar un resultado esperado o cumplir sus objetivos de diseño. Su racionalidad se refleja en la capacidad de tomar decisiones correctas basadas en creencias y deseos, lo que le permite adaptarse, aprender y operar de forma autónoma en entornos dinámicos. Los agentes inteligentes son fundamentales en áreas como la robótica y la inteligencia artificial, donde se busca emular capacidades humanas de razonamiento y acción (Capítulos 3.1 y 4.1.3).
 
-### **2. Campo de potencial artificial (APF)**
+## **2. Campo de potencial artificial (APF)**
 El método de Campos de Potenciales Artificiales (APF) es una técnica utilizada en robótica para la planificación de trayectorias. Se modela el espacio de trabajo como un campo de fuerzas virtuales donde:
 
-* El objetivo genera un campo de atracción que atrae al robot como si fuera una partícula cargada positivamente.
+* El **objetivo** genera un **campo de atracción** que atrae al robot como si fuera una partícula cargada positivamente.
 
-* Los obstáculos generan campos de repulsión que alejan al robot para evitar colisiones.
+* Los **obstáculos** generan **campos de repulsión** que alejan al robot para evitar colisiones.
 
 La fuerza resultante que guía al robot es la suma vectorial de estas fuerzas. Aunque es un método sencillo y eficiente, tiene la limitación de que puede quedar atrapado en mínimos locales (puntos donde las fuerzas se anulan y el robot no puede avanzar hacia el objetivo), especialmente en entornos con obstáculos cóncavos o complejos (Capítulos 4.1.2.1 y 5).
 
-### **3. Algoritmo BDI (Belief-Desire-Intention):**
+## **3. Algoritmo BDI (Belief-Desire-Intention):**
 El modelo BDI (Creencias, Deseos e Intenciones) es una arquitectura de razonamiento práctico inspirada en la psicología humana, utilizada para dotar de inteligencia y capacidad de decisión a agentes y robots. Sus componentes son:
 
 * **Creencias (Beliefs):** Representan el conocimiento del robot sobre el estado actual del entorno (posición, obstáculos, objetivo), obtenido mediante percepción.
@@ -70,7 +70,7 @@ El modelo BDI (Creencias, Deseos e Intenciones) es una arquitectura de razonamie
 
 * **Intenciones (Intentions):** Son los planes o acciones concretas que el robot elige para cumplir sus deseos, basándose en sus creencias.
 
-En el contexto de la tesis, el BDI se integra con el método APF para permitir que el robot detecte y evade mínimos locales mediante la reevaluación de sus creencias, la ajuste de sus deseos (ej.: buscar un objetivo intermedio) y cambie sus intenciones (ej.: modificar la ruta) de manera adaptativa (Capítulos 4.1.3.1 y 6).
+En el contexto de la tesis, el BDI se integra con el método APF para permitir que el robot **detecte y evade mínimos locales** mediante la reevaluación de sus creencias, la ajuste de sus deseos (ej.: buscar un objetivo intermedio) y cambie sus intenciones (ej.: modificar la ruta) de manera adaptativa (Capítulos 4.1.3.1 y 6).
 
 ## Tercer punto
 
