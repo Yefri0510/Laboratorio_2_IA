@@ -6,7 +6,7 @@ Python se ha consolidado como uno de los lenguajes más versátiles y poderosos 
 
 En cuanto a la representación intermedia, Altair se destaca por su enfoque declarativo, facilitando la construcción de visualizaciones a partir de transformaciones lógicas de los datos. Finalmente, para tareas de renderizado avanzado, Python integra librerías como Pygal (orientada a gráficos vectoriales escalables) o incluso opciones para renderizado 3D como Mayavi y Plotly 3D. Esta combinación de herramientas hace de Python una opción integral para científicos, ingenieros y diseñadores que buscan transformar datos en insights visuales de alto impacto. A continuación se habla acerca de algunas de ellas:
 
-#1.Procesamiento y Manipulación de Datos
+## 1. Procesamiento y Manipulación de Datos
 
 Estas librerías son el núcleo para la manipulación y el análisis de datos.
 
@@ -21,6 +21,27 @@ Estas librerías son el núcleo para la manipulación y el análisis de datos.
 | **Ibis** | Proporciona una API de DataFrame que se traduce a SQL y se ejecuta en motores de bases de datos. | Análisis de datos directamente en bases de datos (BigQuery, Postgres). |
 | **DuckDB** | Motor de base de datos analítica embebida. Se ejecuta in-process. | Consultas SQL rápidas sobre datos locales o en memoria. |
 | **RAPIDS (cuDF)** | Ofrece una API similar a pandas para ejecutar operaciones de datos en GPUs NVIDIA. | Aceleración masiva de workflows de data science con GPU. |
+
+## 2. Visualización y Graficación
+
+Este conjunto de librerías se utiliza para crear visualizaciones estáticas e interactivas.
+
+#### APIs de Alto Nivel
+*   **.plot() de pandas**: API rápida y conveniente basada en matplotlib para crear gráficos estáticos directamente desde un DataFrame.
+*   **hvPlot**: API unificada y minimalista que genera gráficos interactivos (usando Bokeh o Plotly como backend) desde pandas, Dask o xarray con muy poco código.
+
+### Representación Intermedia (Abstracción)
+*   **HoloViews**: Se enfoca en la semántica de los datos más que en los detalles visuales. Define la visualización y luego la renderiza con Bokeh o matplotlib. Ideal para construir visualizaciones complejas de manera declarativa.
+*   **Datashader**: Diseñada para visualizar conjuntos de datos extremadamente grandes (miles de millones de puntos). Primero rasteriza los datos para luego aplicar colores, permitiendo visualizar big data sin colapsar el navegador.
+
+### Motores de Renderizado (Backends)
+*   **matplotlib**: La librería fundamental para visualizaciones estáticas en Python. Altamente personalizable pero con una API más verbosa.
+*   **Bokeh**: Especializada en crear visualizaciones interactivas para navegadores web. Ideal para dashboards y aplicaciones de data apps.
+*   **Plotly**: Similar a Bokeh, con un fuerte enfoque en la interactividad inmediata y la capacidad de crear dashboards en la nube fácilmente.
+
+## 3. Aplicaciones Web y Dashboards
+
+*   **Streamlit**: Framework para convertir scripts de datos en aplicaciones web interactivas de manera extremadamente rápida. Se integra perfectamente con la mayoría de las librerías de visualización (Matplotlib, Plotly, Bokeh, etc.).
 
 ## Segundo punto
 
