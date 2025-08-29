@@ -1,2 +1,7 @@
-# Laboratorio_II_IA
-En este espacio se adjunta la solución del laboratorio No. 2 para el curso Introducción a la Inteligencia Artificial 8A, Universidad Santo Tomás 2025-2
+# LABORATORIO 2
+## Primer punto
+
+## Segundo punto
+
+## Tercer punto
+
