@@ -61,7 +61,7 @@ El método de Campos de Potenciales Artificiales (APF) es una técnica utilizada
 
 La fuerza resultante que guía al robot es la suma vectorial de estas fuerzas. Aunque es un método sencillo y eficiente, tiene la limitación de que puede quedar atrapado en mínimos locales (puntos donde las fuerzas se anulan y el robot no puede avanzar hacia el objetivo), especialmente en entornos con obstáculos cóncavos o complejos (Capítulos 4.1.2.1 y 5).
 
-## **3. Algoritmo BDI (Belief-Desire-Intention):**
+## **3. Algoritmo BDI (Belief-Desire-Intention)**
 El modelo BDI (Creencias, Deseos e Intenciones) es una arquitectura de razonamiento práctico inspirada en la psicología humana, utilizada para dotar de inteligencia y capacidad de decisión a agentes y robots. Sus componentes son:
 
 * **Creencias (Beliefs):** Representan el conocimiento del robot sobre el estado actual del entorno (posición, obstáculos, objetivo), obtenido mediante percepción.
@@ -72,5 +72,55 @@ El modelo BDI (Creencias, Deseos e Intenciones) es una arquitectura de razonamie
 
 En el contexto de la tesis, el BDI se integra con el método APF para permitir que el robot **detecte y evade mínimos locales** mediante la reevaluación de sus creencias, la ajuste de sus deseos (ej.: buscar un objetivo intermedio) y cambie sus intenciones (ej.: modificar la ruta) de manera adaptativa (Capítulos 4.1.3.1 y 6).
 
-## Tercer punto
+# Tercer punto
+
+Esta sección contiene dos enfoques para la navegación de un agente en un entorno con obstáculos: 
+1. **CAMP_2.py**: Implementa un método basado únicamente en campos de potencial artificiales.
+2. **Ejercicio_BDI.py**: Mejora el anterior combinando planificación global (A*) y control local (campos de potencial) con mecanismos de recuperación.
+## CAMP_2.py: Navegación por Campos de Potencial
+### Descripción
+El archivo `CAMP_2.py` implementa un algoritmo de campos de potencial artificiales para guiar a un agente desde una posición inicial hasta un objetivo, evitando obstáculos. 
+### Funcionamiento
+- **Potencial Atractivo**: Atrae al agente hacia el objetivo con una fuerza proporcional a la distancia.
+- **Potencial Repulsivo**: Aleja al agente de los obstáculos cuando se encuentra dentro de un radio de influencia.
+- El movimiento del agente se calcula mediante el **gradiente negativo** del potencial total, moviéndose hacia regiones de menor energía.
+### Limitaciones
+- Puede quedar atrapado en **mínimos locales**.
+- No garantiza encontrar una ruta en entornos complejos (ej: obstáculos en forma de herradura).
+## Ejercicio_BDI.py: Planificación Híbrida (A* y Campos de Potencial)
+### Descripción
+El archivo `Ejercicio_BDI.py` extiende la lógica de `CAMP_2.py` con una arquitectura híbrida que combina planificación global y control local, superando las limitaciones del enfoque de campos de potencial puros.
+### Componentes Principales
+#### 1. Planificación Global con A*
+- Genera una ruta inicial desde el inicio hasta el objetivo usando el algoritmo **A*** en un grid discretizado.
+- Considera la inflación de obstáculos para evitar colisiones.
+#### 2. Control Local con Campos de Potencial
+- Utiliza una versión mejorada de campos de potencial para seguir los waypoints de la ruta global.
+- Combina:
+  - **Atracción** hacia el waypoint actual.
+  - **Repulsión** de obstáculos cercanos.
+#### 3. Detección de Estancamiento y Replanificación
+- Monitorea el historial de posiciones para detectar si el agente está atrapado (ej: en mínimos locales).
+- Si se detecta estancamiento, se **replanifica la ruta** usando A* desde la posición actual.
+#### 4. Mecanismos de Recuperación
+- Si falla la replanificación, aplica pequeñas **perturbaciones aleatorias** para escapar de mínimos locales.
+- Limita el número de replanificaciones para evitar ciclos infinitos.
+#### 5. Visualización Mejorada
+- Muestra la ruta global (A*), waypoints, trayectoria real y el estado del agente en tiempo real.
+- Incluye una gráfica de la **distancia al objetivo** para evaluar el progreso.
+### Comparación de Enfoques
+| Aspecto               | CAMP_2.py                          | Ejercicio_BDI.py                          |
+|-----------------------|------------------------------------|-------------------------------------------|
+| Planificación         | Local (gradiente)                 | Global (A*) + Local (campos de potencial) |
+| Escape de mínimos     | No                                | Sí (replanificación + perturbaciones)     |
+| Complejidad de obstáculos | Limitada                     | Alta (ej: herradura)                      |
+| Robustez              | Baja                              | Alta                                      |
+| Garantía de éxito     | No                                | Sí (si existe ruta)                       |
+## Conclusión
+**Ejercicio_BDI.py** implementa un **sistema híbrido BDI** (Belief-Desire-Intention) donde:
+- **Creencias**: Representan el entorno (obstáculos, goal).
+- **Deseos**: Llegar al objetivo.
+- **Intenciones**: Seguir la ruta de A* y evitar obstáculos localmente.
+Esta estrategia supera las limitaciones de los campos de potencial puros, siendo capaz de navegar en entornos complejos y escapar de situaciones de estancamiento mediante replanificación inteligente.
+
 
