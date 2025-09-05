@@ -1,7 +1,8 @@
 # LABORATORIO 2
+ 
+* Yefri Stiven Barrero Solano - 2320392
+* Jose Alejandro Mesa Chaves - 2291048
 
-Yefri Stiven Barrero Solano - 2320392
-Jose Alejandro Mesa Chaves - 2291048
 
 # Primer punto
 
